@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jun 2026 pada 19.19
+-- Waktu pembuatan: 10 Jun 2026 pada 19.19
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -43,7 +43,7 @@ CREATE TABLE `about_contents` (
 --
 
 INSERT INTO `about_contents` (`id`, `title`, `description`, `chef_quote`, `chef_image`, `establishment_year`, `created_at`, `updated_at`) VALUES
-(1, 'Perjalanan Kuliner Kami', 'Kami membawa pengalaman kuliner terbaik dengan bahan-bahan segar dan koki yang penuh gairah.', 'Memasak adalah seni, dan kami adalah pelukisnya.', 'https://picsum.photos/400/500?random=1', 2008, '2026-04-15 01:59:11', '2026-04-15 01:59:11');
+(1, 'Perjalanan Kuliner Kami', 'Kami membawa pengalaman kuliner terbaik dengan bahan-bahan segar dan koki yang penuh gairah.', 'Memasak adalah seni, dan kami adalah pelukisnya.', 'about/chef-images/01KTKEE5WQ5NQQZTSNJZPQJN96.jpg', 2008, '2026-04-15 01:59:11', '2026-06-08 04:03:43');
 
 -- --------------------------------------------------------
 
@@ -142,7 +142,7 @@ CREATE TABLE `chefs` (
 --
 
 INSERT INTO `chefs` (`id`, `name`, `role`, `bio`, `image_url`, `awards`, `order_number`, `created_at`, `updated_at`) VALUES
-(1, 'Chef Andi Pratama', 'Executive Chef', 'Dengan pengalaman lebih dari 20 tahun, Chef Andi menghadirkan cita rasa khas yang memikat di setiap hidangan.', 'https://picsum.photos/400/500?random=10', '[\"Best Asian Cuisine 2018\",\"Gold Medal Culinary Festival 2020\"]', 1, '2026-04-15 01:59:12', '2026-04-15 01:59:12'),
+(1, 'Chef Rijal Pratama', 'Executive Chef', 'Dengan pengalaman lebih dari 20 tahun, Chef Rijal menghadirkan cita rasa khas yang memikat di setiap hidangan.', 'chefs/01KTKE95DNGRHANX2HC8DJ8B9F.jpg', '[\"Best Asian Cuisine 2018\",\"Gold Medal Culinary Festival 2020\"]', 1, '2026-04-15 01:59:12', '2026-06-08 04:00:58'),
 (2, 'Chef Lestari Widya', 'Pastry Chef', 'Ahli dalam seni membuat dessert dengan tampilan memukau dan rasa yang menggoda.', 'https://picsum.photos/400/500?random=11', '[\"Top Pastry Innovator 2019\"]', 2, '2026-04-15 01:59:12', '2026-04-15 01:59:12'),
 (3, 'Chef Rio Santoso', 'Sous Chef', 'Chef muda berbakat yang terus mengeksplorasi teknik memasak modern dan tradisional.', 'https://picsum.photos/400/500?random=12', '[]', 3, '2026-04-15 01:59:12', '2026-04-15 01:59:12');
 
@@ -234,9 +234,9 @@ CREATE TABLE `featured_events` (
 --
 
 INSERT INTO `featured_events` (`id`, `event_name`, `date`, `time`, `location`, `description`, `image_url`, `created_at`, `updated_at`) VALUES
-(1, 'Live Music Night', '2025-08-15', '19:00', 'Cafe Katumiri Hall', 'Nikmati malam penuh musik dan suasana hangat bersama musisi lokal terbaik.', 'https://picsum.photos/600/400?random=21', '2026-04-15 01:59:12', '2026-04-15 01:59:12'),
-(2, 'Cooking Class: Pasta Edition', '2025-08-20', '14:00', 'Dapur Utama Cafe Katumiri', 'Belajar langsung dari chef kami bagaimana membuat pasta autentik Italia.', 'https://picsum.photos/600/400?random=22', '2026-04-15 01:59:12', '2026-04-15 01:59:12'),
-(3, 'Family Brunch Special', '2025-08-25', '10:00', 'Teras Taman Cafe Katumiri', 'Ajak keluarga menikmati brunch lezat dengan menu spesial dan suasana hangat.', 'https://picsum.photos/600/400?random=23', '2026-04-15 01:59:12', '2026-04-15 01:59:12');
+(1, 'Live Music Night', '2026-07-08', '19:00', 'King Coffee Hall', 'Nikmati malam penuh musik dan suasana hangat bersama musisi lokal terbaik.', 'events/01KTKDMS6ACY44X5SFB8V5TQ1H.jpg', '2026-04-15 01:59:12', '2026-06-08 03:49:51'),
+(2, 'Cooking Class: Beef Steak Edition', '2026-08-20', '14:00', 'Dapur Utama King Coffee', 'Belajar langsung dari chef kami bagaimana membuat beef steak autentik.', 'events/01KTKDVXWJ2EW3ABXF4T6140NS.jpg', '2026-04-15 01:59:12', '2026-06-08 03:53:45'),
+(3, 'Family Brunch Special', '2025-08-27', '10:00', 'Teras Taman King Coffee', 'Ajak keluarga menikmati brunch lezat dengan menu spesial dan suasana hangat.', 'events/01KTKE48M90FZY0TJQ2JBG2ZEH.jpg', '2026-04-15 01:59:12', '2026-06-08 03:58:18');
 
 -- --------------------------------------------------------
 
@@ -441,8 +441,13 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `table_id`, `total_price`, `status`, `payment_status`, `snap_token`, `created_at`, `updated_at`) VALUES
-(2, 1, 250000, 'dimasak', 'unpaid', 'c65458f7-e797-4e31-a632-696743ff174e', '2026-06-07 09:18:01', '2026-06-07 09:27:08'),
-(3, 2, 30000, 'dimasak', 'unpaid', '46e6a13a-13c5-472c-8f5f-b20e590b6772', '2026-06-07 09:36:10', '2026-06-07 09:38:33');
+(2, 1, 250000, 'selesai', 'paid', 'c65458f7-e797-4e31-a632-696743ff174e', '2026-06-07 09:18:01', '2026-06-08 03:19:31'),
+(3, 2, 30000, 'selesai', 'paid', '46e6a13a-13c5-472c-8f5f-b20e590b6772', '2026-06-07 09:36:10', '2026-06-08 03:19:48'),
+(4, 1, 170000, 'menunggu', 'unpaid', '04a95491-febc-4493-8af4-669ededd18d0', '2026-06-08 02:13:48', '2026-06-08 02:13:53'),
+(8, 3, 185000, 'menunggu', 'unpaid', '6873c0ff-ff1d-49e4-803e-013fab86bfbe', '2026-06-08 02:59:01', '2026-06-08 02:59:05'),
+(9, 2, 100000, 'dimasak', 'paid', '432985ae-a698-4042-aaaa-cec8dbc48c7e', '2026-06-08 03:04:47', '2026-06-08 03:15:24'),
+(10, 2, 95000, 'dimasak', 'unpaid', '02b374e1-4151-47f6-b2a1-5ad23c818840', '2026-06-08 03:24:23', '2026-06-08 03:37:30'),
+(11, 3, 125000, 'dimasak', 'paid', '72edc16d-a699-4cca-aa38-8f07f9ce9040', '2026-06-08 03:43:31', '2026-06-08 03:44:03');
 
 -- --------------------------------------------------------
 
@@ -466,7 +471,8 @@ CREATE TABLE `order_items` (
 
 INSERT INTO `order_items` (`id`, `order_id`, `menu_item_id`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
 (2, 2, 2, 2, 125000, '2026-06-07 09:18:01', '2026-06-07 09:18:48'),
-(3, 3, 4, 1, 30000, '2026-06-07 09:36:10', '2026-06-07 09:36:10');
+(3, 3, 4, 1, 30000, '2026-06-07 09:36:10', '2026-06-07 09:36:10'),
+(4, 11, 2, 1, 125000, '2026-06-08 03:43:31', '2026-06-08 03:43:31');
 
 -- --------------------------------------------------------
 
@@ -506,7 +512,7 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id`, `name`, `email`, `phone`, `people`, `date`, `time`, `message`, `status`, `created_at`, `updated_at`, `table_id`) VALUES
-(4, 'Dewi Kusuma', 'dewi@example.com', '+62 812 4444 4444', 5, '2025-07-13', '17:00:00', NULL, 'Pending', '2026-04-15 01:59:12', '2026-06-03 23:12:29', 2),
+(4, 'Dewi Kusuma', 'dewi@example.com', '+62 812 4444 4444', 5, '2025-07-13', '17:00:00', NULL, 'Confirmed', '2026-04-15 01:59:12', '2026-06-08 03:21:12', 2),
 (5, 'Bayu Nugraha', 'bayu@example.com', '+62 812 5555 5555', 6, '2025-07-14', '19:30:00', 'Mohon siapkan kursi bayi.', 'Pending', '2026-04-15 01:59:12', '2026-04-15 01:59:12', NULL),
 (6, 'didin', 'didin@gmail.com', '082368798699', 6, '2026-04-24', '00:34:00', 'utdfyiguihyuoip[op]', 'Cancelled', '2026-04-15 06:31:08', '2026-04-15 06:32:43', NULL);
 
@@ -530,11 +536,13 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('caDqXmtlheDJbQjZAqhajK1Hbxemt1yyI9x2y4k4', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo4OntzOjY6Il90b2tlbiI7czo0MDoib01KaGZtd01iMm1PTzZqTHhjOWJrYXQ3Qm5FV1NISHE4bjlwZjBFMyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjQ6IjhmYzFkY2QzNGQ5NjY2OGExNjk4OTMxZTcyNmM0YmM5YjlmODZhMWI0ZDYwMWRhNDdiMzhmOWM2YmQ0ZTdjN2EiO3M6ODoiZmlsYW1lbnQiO2E6MDp7fXM6NDoiY2FydCI7YToxOntpOjE7YTozOntzOjQ6Im5hbWUiO3M6MTA6IlNvcCBCdW50dXQiO3M6ODoicXVhbnRpdHkiO2k6NDtzOjU6InByaWNlIjtzOjk6IjEwMDAwMC4wMCI7fX19', 1780852709),
-('DJpEreh3j4ZdhDRo2T4rBep1Sb8tcbcL29eNN8CH', NULL, '127.0.0.1', 'ReactorNetty/1.1.14', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiR2ZDdXBRcFdBc25FamQ4UUlzVTNWcGEydUhmV2NndllEWTZKY01GTCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1780850301),
-('olkM6ss0JDcoPMLxlO3zV89wj6rkthrTAHxGkikz', NULL, '127.0.0.1', 'Veritrans', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoib1lqNVhJTmpIYkVJRVJCTjlObExpbldjelh4MUlNNlY1aVFHTUd2aCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1780849259),
-('p57vq844va8mh0LEUrxTKjL5nepemDZIOJ1s228Z', NULL, '127.0.0.1', 'ReactorNetty/1.1.14', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiaXFTWnVKRWtqQXJqRUhNdXhGZFI0T3I5d0Vjam9UMHhRMlVtUkFaQiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1780850313),
-('tWvdIII4CrsmSyQ6HvYNqWN8B9l3zavCn16ELqn0', NULL, '127.0.0.1', 'Veritrans', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoick5BMVdITkV4ZUxKOGJpeFh2bUk3TDBlbGZocGVublFoSWtQNE40TSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1780849175);
+('1ByBIvMWDuGuX475CDOxQ9SiJqNUzcnyFcYo8z5k', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiMWFZUUJMT1hBa2ltcFZsWXlubTZGWVRYYkc0V0IyQ1hlR2oxME0zMSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1781110237),
+('4hMqRZaUMeasLHF307wTSTuiQDS8sM7PF0KOLwXm', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo2OntzOjY6Il90b2tlbiI7czo0MDoibms1Z2x5bGc4dkljSjB2NnUwd3B4R1cxYlZWalZMdXI0THdGWHVTSCI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDI6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9hbmFseXRpY3MtcGFnZSI7czo1OiJyb3V0ZSI7czozNToiZmlsYW1lbnQuYWRtaW4ucGFnZXMuYW5hbHl0aWNzLXBhZ2UiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YTowOnt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6MTtzOjE3OiJwYXNzd29yZF9oYXNoX3dlYiI7czo2NDoiOGZjMWRjZDM0ZDk2NjY4YTE2OTg5MzFlNzI2YzRiYzliOWY4NmExYjRkNjAxZGE0N2IzOGY5YzZiZDRlN2M3YSI7fQ==', 1781002408),
+('6oezmaKIYTK7A767pEHUHtMiVl3g0qs6xSTBbSI7', NULL, '127.0.0.1', 'Veritrans', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoibGl6V1hXcDFhcVhlQ2xvR2tmU0xMWUw5NHowa3BrcldjVVFzMW1uaSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1780915443),
+('AmuU4zfi5GUYzgoAIcmYqgqBwsAEOtKnZ40YbWmW', NULL, '127.0.0.1', 'Veritrans', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiYVQyNXFFdDRac1ZnYUtXbnlVV3FBMVRGVXJoMDlBanNJeXg4OFlaRSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1780913714),
+('jjOy0SoNbPQCp6yOV2fKt1EjF06waFohWn9wvSbb', NULL, '127.0.0.1', 'Veritrans', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiRHJ5aG15SmVrTEptMXJScTJQMTNQN09TTWZEQ1Fqc2dmeE9udjFrciI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1780915429),
+('MLKBnXq5A80crtUUnqB3li8hC3HStEqtfFyocxXk', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiSlZCT2hVMnR5R2xXaWd1a3VKQnNUTlVvM0N2Vk1RUjljUnc4TWpJNiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozOiJ1cmwiO2E6MDp7fXM6NTA6ImxvZ2luX3dlYl81OWJhMzZhZGRjMmIyZjk0MDE1ODBmMDE0YzdmNThlYTRlMzA5ODlkIjtpOjE7czoxNzoicGFzc3dvcmRfaGFzaF93ZWIiO3M6NjQ6IjhmYzFkY2QzNGQ5NjY2OGExNjk4OTMxZTcyNmM0YmM5YjlmODZhMWI0ZDYwMWRhNDdiMzhmOWM2YmQ0ZTdjN2EiO3M6ODoiZmlsYW1lbnQiO2E6MDp7fX0=', 1780916636),
+('qa1xMR7Fe7wAaxMt2GXPHnkJtKCXwu8DgfJBtlT9', NULL, '127.0.0.1', 'Veritrans', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiMUhFZ1dJcUFodWROazVRTGZHcEc5S2dhYlJ5WDR0YTlMNVVLRUNFdiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1780913724);
 
 -- --------------------------------------------------------
 
@@ -557,7 +565,8 @@ CREATE TABLE `tables` (
 
 INSERT INTO `tables` (`id`, `table_number`, `capacity`, `status`, `created_at`, `updated_at`) VALUES
 (1, '1', 10, 'kosong', '2026-06-03 22:35:30', '2026-06-03 23:09:08'),
-(2, '2', 5, 'reservasi', '2026-06-03 23:11:39', '2026-06-03 23:12:29');
+(2, '2', 5, 'reservasi', '2026-06-03 23:11:39', '2026-06-03 23:12:29'),
+(3, '3', 6, 'kosong', '2026-06-08 02:57:58', '2026-06-08 02:57:58');
 
 -- --------------------------------------------------------
 
@@ -869,13 +878,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `reservations`
@@ -887,7 +896,7 @@ ALTER TABLE `reservations`
 -- AUTO_INCREMENT untuk tabel `tables`
 --
 ALTER TABLE `tables`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `testimonials`
@@ -930,10 +939,6 @@ ALTER TABLE `order_items`
 ALTER TABLE `reservations`
   ADD CONSTRAINT `reservations_table_id_foreign` FOREIGN KEY (`table_id`) REFERENCES `tables` (`id`) ON DELETE SET NULL;
 COMMIT;
-
-ALTER TABLE `orders`
-ADD `payment_status` ENUM('unpaid', 'paid', 'failed') NOT NULL DEFAULT 'unpaid' AFTER `status`,
-ADD `snap_token` VARCHAR(255) NULL AFTER `payment_status`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
