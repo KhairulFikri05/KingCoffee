@@ -79,12 +79,8 @@ npm install && npm run build
 3. **Konfigurasi Environment:**
 Salin file konfigurasi:
 ```bash
-
-```
-
-
-
 cp .env.example .env
+```
 
 ```
    Generate key aplikasi:
