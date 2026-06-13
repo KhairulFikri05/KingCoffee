@@ -20,15 +20,14 @@ Proyek ini dikembangkan untuk keperluan akademik UAS PBW B oleh **Kelompok 10**
 Mengotomatisasi proses operasional cafe dari manual menjadi digital. Aplikasi ini bertujuan untuk mempermudah pelanggan dalam mereservasi meja, menyediakan katalog menu yang dinamis, serta memberikan kemudahan bagi pemilik cafe dalam memantau pendapatan, mengelola konten promosi website, dan melacak status pesanan secara *real-time*.
 
 ## ✨ Daftar Fitur yang Tersedia
-
-* **CMS Landing Page:** Manajemen konten website publik secara dinamis (Hero Sliders, Profil Chef, Event, Kontak, dan Testimoni).
-* **Reservasi Meja Online:** Terintegrasi langsung dengan status meja untuk mencegah bentrok jadwal (*double-booking*).
-* **Manajemen Status Meja:** Pemantauan *real-time* (kosong, reservasi, digunakan).
-* **Katalog Menu Dinamis:** Pengelompokan menu berdasarkan kategori (`Starters`, `Main Course`, `Desserts`, `Drinks`) dan manajemen ketersediaan.
-* **Payment Gateway (Midtrans):** Pembayaran terintegrasi langsung di sistem pesanan (status: `unpaid`, `paid`, `failed`).
-* **Dashboard Admin Terpadu:** Antarmuka manajemen interaktif berbasis Filament v3 untuk mengatur seluruh operasional kafe.
-* **Desain Fully Responsive:** Nyaman diakses melalui *mobile* maupun *desktop*.
-
+* **CMS Landing Page:** Manajemen konten profil kafe publik secara dinamis (Hero Sliders, Profil Chef, Event Kafe, Kontak, Peta Lokasi, dan Testimoni Pelanggan).
+* **Katalog Menu Dinamis:** Menampilkan daftar pesanan berdasarkan kategori (*Starters, Main Course, Desserts, Drinks*). Status ketersediaan menu dikelola sepenuhnya oleh Admin.
+* **Reservasi & Manajemen Meja:** Pelanggan dapat mengajukan *request* reservasi secara online. Admin bertugas memantau dan mengatur status meja (*kosong, reservasi, digunakan*) secara terpusat melalui dashboard.
+* **Manajemen Alur Pesanan (*Order Tracking*):** Pencatatan keranjang pesanan pelanggan, di mana Admin dapat memperbarui status pesanan secara bertahap (*menunggu, dimasak, disajikan, selesai, dibatalkan*).
+* **Payment Gateway (Midtrans):** Pembayaran digital terintegrasi untuk setiap pesanan dengan pembaruan status transaksi secara otomatis (*unpaid, paid, failed*).
+* **Dashboard Admin Terpadu:** Antarmuka manajemen interaktif berbasis Filament v3 yang berfungsi sebagai pusat kendali utama untuk seluruh operasional kafe.
+* **Desain Fully Responsive:** Tampilan UI/UX yang estetis, modern, dan nyaman diakses melalui perangkat *mobile* maupun *desktop*.
+  
 ## 🛠️ Teknologi, Framework, Library, dan Komponen yang Digunakan
 
 * **Backend & Framework:** Laravel 12, PHP 8.2+
