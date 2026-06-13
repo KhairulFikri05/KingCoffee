@@ -1,113 +1,99 @@
-# 🍽️ Kape Cihanjuang
+# ☕ SIM-C KING COFFEE
 
-Aplikasi manajemen restoran berbasis web, dibangun dengan **Laravel 12** dan **Filament Admin v3**.
-Proyek ini dikembangkan oleh tim **mulaidigital.com** untuk membantu restoran mengelola menu, reservasi, galeri, testimoni pelanggan, event, dan konten lainnya melalui panel admin yang modern, elegan, dan responsif.
-
----
+Aplikasi Sistem Informasi Manajemen Kafe berbasis web, dibangun dengan Laravel 12 dan Filament Admin v3. Proyek ini dikembangkan untuk membantu kafe mengelola menu, pesanan pelanggan, integrasi pembayaran digital, dan pelaporan melalui panel admin yang modern, elegan, dan responsif.
 
 ## 🚀 Fitur Utama
-- Manajemen Menu & Kategori
-- Reservasi Online
-- Galeri & Event Terjadwal
-- Kontak & Lokasi
-- Testimoni Pelanggan
-- Dashboard Admin berbasis Filament
-- Desain Fully Responsive (mobile & desktop)
 
----
+* **Katalog Menu & Pemesanan Publik:** Pelanggan dapat melihat menu dan memasukkannya ke keranjang.
+* **Checkout & Integrasi Payment Gateway:** Pembayaran otomatis menggunakan Midtrans API.
+* **Pilih Nomor Meja:** Pelanggan dapat menentukan meja secara mandiri saat *checkout*.
+* **Dashboard Admin berbasis Filament:** Manajemen data yang interaktif untuk pemilik atau admin kafe.
+* **Desain Fully Responsive:** Tampilan UI/UX disesuaikan dengan tema estetika *coffee shop* (mobile & desktop).
 
 ## 👨‍💼 Developer
-- Nama: **[DENS]**
-- Email: deniekapratama07@gmail.com
 
----
+* **Nama:** Khairul Fikri
+* **NPM:** 2408107010032
+* **Program Studi:** Informatika, Universitas Syiah Kuala
 
 ## 🛠️ Teknologi yang Digunakan
-- Laravel 12
-- Filament Admin (v3)
-- Blade Template & Livewire
-- Tailwind CSS, Bootstrap 5, daisyUI, Animate.css
-- MySQL
-- Laravel Seeder & Factory
 
----
+* Laravel 12
+* Filament Admin (v3)
+* Blade Template & Livewire
+* Midtrans API (Payment Gateway)
+* Tailwind CSS & Bootstrap 5
+* MySQL
 
 ## 🧑‍🍳 Cara Instalasi (Localhost)
+
 Ikuti langkah berikut untuk menjalankan aplikasi:
 
-1. Ekstrak file `kapecihanjuang.zip`
-2. Install dependency dengan Composer (versi **2.8.3+**):
-   jalankan perintah composer install atau composer update
-   > Pastikan PHP **8.2+** sudah terpasang (rekomendasi PHP 8.4).
-3. Salin file `.env` dari `.env.example`
-4. Generate key aplikasi:
-   php artisan key:generate
-5. Sesuaikan konfigurasi `.env`, contoh:
-   APP_NAME=KapecihanJuang
-   APP_ENV=local
-   APP_URL=http://127.0.0.1:8000
+1. **Clone Repository:**
+Jalankan perintah `git clone https://github.com/username-lu/nama-repo-lu.git` di terminal.
+2. **Install Dependency Composer:**
+Jalankan perintah `composer install`. Pastikan PHP 8.2+ sudah terpasang.
+3. **Install Dependency Frontend:**
+Jalankan perintah `npm install && npm run build`.
+4. **Konfigurasi Environment:**
+Salin file `.env.example` menjadi `.env`.
+5. **Generate Key Aplikasi:**
+Jalankan perintah `php artisan key:generate`.
+6. **Konfigurasi Database:**
+Sesuaikan file `.env`, contoh:
+```env
+APP_NAME="SIM-C KING COFFEE"
+APP_URL=http://127.0.0.1:8000
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=sim_c
+DB_USERNAME=root
+DB_PASSWORD=
 
-   DB_CONNECTION=mysql
-   DB_HOST=127.0.0.1
-   DB_PORT=3306
-   DB_DATABASE=kapecihanjuang
-   DB_USERNAME=root
-   DB_PASSWORD=
-6. Buat database `kapecihanjuang` (via phpMyAdmin atau CLI)
-7. Import file kapecihanjuang.sql ke database kamu
-8. Jalankan server:
-   php artisan serve
+```
 
-   Buka http://127.0.0.1:8000
 
----
+7. **Migrasi Data:**
+Buat database `sim_c` via phpMyAdmin, lalu jalankan `php artisan migrate`.
+8. **Jalankan Server:**
+Jalankan perintah `php artisan serve`.
+9. **Akses Aplikasi:**
+Buka `http://127.0.0.1:8000` di browser.
 
 ## 🔑 Akses Admin
-- URL: http://127.0.0.1:8000/admin
-- Email: admin@example.com
-- Password: admin@example.com
 
-Jika user admin belum ada, buat manual via Tinker:
-\App\Models\User::create([
-  'name' => 'Admin',
-  'email' => 'admin@example.com',
-  'password' => bcrypt('password'),
-]);
+* **URL:** `http://127.0.0.1:8000/admin`
+* **Email:** admin@simc.com
+* **Password:** password
 
----
+Jika user admin belum ada, buat manual via Tinker (`php artisan tinker`):
+
+```php
+\App\Models\User::create(['name' => 'Admin Kafe', 'email' => 'admin@simc.com', 'password' => bcrypt('password')]);
+
+```
 
 ## 🪠 Troubleshooting
 
-| Masalah                                      | Solusi                                                                           |
-| -------------------------------------------- | -------------------------------------------------------------------------------- |
-| `Class not found` saat `php artisan migrate` | Jalankan `composer dump-autoload`                                                |
-| Gagal konek ke database                      | Periksa `DB_DATABASE`, `DB_USERNAME`, dan `DB_PASSWORD` di `.env`                |
-| Akses `/admin/login` tapi halaman kosong     | Jalankan `php artisan migrate --seed` dan pastikan user admin ada                |
-| Halaman blank                                | Periksa log di `storage/logs/laravel.log`                                        |
-| Error ekstensi `pdo_mysql`                   | Aktifkan ekstensi di `php.ini`                                                   |
-
----
+| Masalah | Solusi |
+| --- | --- |
+| **Class not found saat migrate** | Jalankan `composer dump-autoload` |
+| **Gagal konek ke database** | Periksa `DB_DATABASE`, `DB_USERNAME`, dan `DB_PASSWORD` di `.env` |
+| **Akses /admin/login tapi kosong** | Pastikan file konfigurasi Filament aman dan user admin sudah dibuat. |
+| **Halaman blank / Error 500** | Periksa log di `storage/logs/laravel.log` |
+| **Error pop-up Midtrans tidak muncul** | Pastikan `MIDTRANS_SERVER_KEY` dan `MIDTRANS_CLIENT_KEY` di `.env` sudah terisi dengan benar. |
 
 ## 📦 Perintah Composer & Artisan yang Berguna
-composer install           # Install dependency
-composer update            # Update package
-php artisan storage:link   # Buat symbolic link untuk upload
-php artisan serve          # Jalankan server
-php artisan tinker         # CLI query langsung
 
----
+```bash
+composer install          # Install dependency PHP
+npm install               # Install dependency Node.js
+php artisan storage:link  # Buat symbolic link untuk menampilkan gambar menu
+php artisan serve         # Jalankan server lokal
 
-## 📄 Lisensi
-Proyek ini dikembangkan dan dimiliki oleh **mulaidigital.com**.
-Silakan gunakan kode ini dengan bijak. Untuk kerjasama hubungi:
-📧 deniekapratama07@gmail.com
+```
 
----
+## 📸 Screenshot Tampilan Aplikasi
 
-## 📬 Kontak
-- 🌐 Website: https://mulaidigital.com
-- ✉️ Email: deniekapratama07@gmail.com
-
----
-
-> Terima kasih
+*(Tambahkan gambar screenshot Halaman Utama, Keranjang Pesanan, dan Dashboard Filament di sini)*
