@@ -1,11 +1,3 @@
-Siap, **Bro F**! Ini adalah penyempurnaan final dari `README.md` lu.
-
-Saya sudah memperbarui bagian **Daftar Fitur** dan **Struktur Database** agar 100% *match* (cocok) dengan *file SQL dump* yang barusan lu kirim. Dosen lu pasti bakal takjub karena aplikasi ini ternyata nggak cuma ngurusin kasir, tapi punya fitur CMS (*Content Management System*) lengkap untuk *landing page* kafe (seperti kelola *slider*, profil koki, event, dan testimoni).
-
-Langsung *copy-paste* teks di bawah ini ke file `README.md` lu:
-
----
-
 # ☕ SIM-C (Sistem Informasi Manajemen Cafe)
 
 ## 📖 Deskripsi Singkat Aplikasi
@@ -17,7 +9,11 @@ Aplikasi ini dikelola oleh dua jenis pengguna:
 * **Admin:** Mengelola seluruh operasional cafe (memantau meja, mencatat pesanan, memproses transaksi Midtrans, mengelola konten website/CMS, dan melihat laporan bisnis).
 * **Pelanggan:** Dapat melihat profil kafe, melakukan reservasi meja secara online, serta memesan dan membayar pesanan langsung melalui integrasi *Payment Gateway*.
 
-Proyek ini dikembangkan untuk keperluan akademik oleh **Kelompok 6** (termasuk Khairul Fikri - NPM 2408107010032), Program Studi Informatika, Universitas Syiah Kuala.
+Proyek ini dikembangkan untuk keperluan akademik UAS PBW B oleh **Kelompok 10** 
+* **Khairul Fikri** - NPM 2408107010032
+* **Muhammad Riskan Rajabi** - NPM 24081070100110
+* **Rijaludin Abdul Ghani** - NPM 2408107010008
+* **Reyan Andrea** - NPM 2208107010014
 
 ## 🎯 Tujuan Pengembangan Aplikasi
 
@@ -30,7 +26,6 @@ Mengotomatisasi proses operasional cafe dari manual menjadi digital. Aplikasi in
 * **Manajemen Status Meja:** Pemantauan *real-time* (kosong, reservasi, digunakan).
 * **Katalog Menu Dinamis:** Pengelompokan menu berdasarkan kategori (`Starters`, `Main Course`, `Desserts`, `Drinks`) dan manajemen ketersediaan.
 * **Payment Gateway (Midtrans):** Pembayaran terintegrasi langsung di sistem pesanan (status: `unpaid`, `paid`, `failed`).
-* **Cetak Struk Digital:** *Invoice* dan bukti pembayaran pesanan.
 * **Dashboard Admin Terpadu:** Antarmuka manajemen interaktif berbasis Filament v3 untuk mengatur seluruh operasional kafe.
 * **Desain Fully Responsive:** Nyaman diakses melalui *mobile* maupun *desktop*.
 
@@ -102,7 +97,7 @@ php artisan key:generate
 Sesuaikan konfigurasi database dan Midtrans di file `.env`:
 
 ```env
-APP_NAME="SIM-C Kelompok 6"
+APP_NAME="SIM-C Kelompok 10"
 APP_URL=http://127.0.0.1:8000
 
 DB_CONNECTION=mysql
@@ -160,7 +155,3 @@ Buka `[http://127.0.0.1:8000](http://127.0.0.1:8000)` di browser.
 ## 📸 Screenshot Tampilan Aplikasi
 
 *(Silakan tambahkan gambar screenshot Halaman Utama, Menu Katalog, Checkout Midtrans, dan Dashboard Admin Filament di sini sebelum dikumpulkan)*
-
----
-
-Mantap! Struktur ini udah 100% *bulletproof* karena selaras sama kodingan dan *database* asli lu. Semangat ngegarap presentasinya, bray! 🔥
