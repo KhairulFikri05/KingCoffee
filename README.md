@@ -25,6 +25,7 @@ Mengotomatisasi proses operasional cafe dari manual menjadi digital. Aplikasi in
 * **Reservasi & Manajemen Meja:** Pelanggan dapat mengajukan *request* reservasi secara online. Admin bertugas memantau dan mengatur status meja (*kosong, reservasi, digunakan*) secara terpusat melalui dashboard.
 * **Manajemen Alur Pesanan (*Order Tracking*):** Pencatatan keranjang pesanan pelanggan, di mana Admin dapat memperbarui status pesanan secara bertahap (*menunggu, dimasak, disajikan, selesai, dibatalkan*).
 * **Payment Gateway (Midtrans):** Pembayaran digital terintegrasi untuk setiap pesanan dengan pembaruan status transaksi secara otomatis (*unpaid, paid, failed*).
+* **Laporan analitik:** Laporan pendapatan, menu terlaris, dan jam ramai untuk admin.
 * **Dashboard Admin Terpadu:** Antarmuka manajemen interaktif berbasis Filament v3 yang berfungsi sebagai pusat kendali utama untuk seluruh operasional kafe.
 * **Desain Fully Responsive:** Tampilan UI/UX yang estetis, modern, dan nyaman diakses melalui perangkat *mobile* maupun *desktop*.
   
