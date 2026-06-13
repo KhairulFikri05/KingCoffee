@@ -55,36 +55,42 @@ Proyek ini memiliki struktur relasional yang komprehensif, mencakup tabel operas
 * Composer 2.x
 * MySQL / MariaDB
 * Node.js & NPM
+Siap! Ini format Markdown-nya udah saya rapikan dan perbaiki *backticks* (```)-nya. Sekarang setiap perintah *bash* dan *env* udah masuk ke kotaknya masing-masing dengan rapi dan sejajar dengan penomorannya.
 
+Tinggal *copy-paste* blok di bawah ini:
+
+```markdown
 ### Langkah Instalasi
 
 1. **Clone repository:**
+   ```bash
+git clone https://github.com/username/sim-c.git
+cd sim-c
+
+```
+
+2. **Install dependency:**
 ```bash
 
 ```
 
 
 
-git clone https://github.com/username/sim-c.git
-cd sim-c
-
-```
-2. **Install dependency:**
-   ```bash
 composer install
 npm install && npm run build
 
 ```
 
 3. **Konfigurasi Environment:**
-Salin file konfigurasi:
-```bash
+   Salin file konfigurasi:
+   ```bash
 cp .env.example .env
-```
 
 ```
-   Generate key aplikasi:
-   ```bash
+
+Generate key aplikasi:
+
+```bash
 php artisan key:generate
 
 ```
@@ -122,14 +128,19 @@ php artisan migrate --seed
 php artisan storage:link
 
 ```
+
 6. **Jalankan Server Lokal:**
    ```bash
-php artisan serve
+   php artisan serve
 
 ```
 
 Buka `[http://127.0.0.1:8000](http://127.0.0.1:8000)` di browser.
 
+```
+
+
+```
 ### 🔑 Akses Admin & Troubleshooting
 
 * **URL Login Admin:** `[http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin)`
